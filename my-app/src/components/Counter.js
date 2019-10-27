@@ -9,6 +9,9 @@ class Counter extends Component {
         this.state = {
              count: 0
         }
+        // Bind event handler to component so that it can 
+        // change state
+        this.incrementFive = this.incrementFive.bind(this)
     }
     
     increment() {
@@ -60,7 +63,7 @@ class Counter extends Component {
         return (
             <div>
                 <h1>Count: {this.state.count}</h1>
-                <button onClick = {() => this.incrementFive()}>Increment!</button>
+                <button onClick = {this.incrementFive}>Increment!</button>
             </div>
         )
     }
