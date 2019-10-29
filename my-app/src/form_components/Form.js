@@ -13,7 +13,7 @@ class Form extends Component {
         this.handleCommentsChange = this.handleCommentsChange.bind(this)
         this.handleTopicChange = this.handleTopicChange.bind(this)
     }
-    
+
     handleUsernameChange = (event) => {
         this.setState({
             username: event.target.value

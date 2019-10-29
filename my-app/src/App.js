@@ -9,11 +9,13 @@ import ClassClick from './components/ClassClick'
 import EventBind from './components/EventBind'
 import ParentComponent from './components/ParentComponent'
 import UserGreeting from './components/UserGreeting';
-import NameList from './components/NameList';
-import StyleSheet from './components/StyleSheet'
-
+import NameList from './components/NameList'
 import Form from './form_components/Form'
+import Fragment from './components/Fragment'
+import Table from './components/Table'
+import LifecycleA from './components/LifecycleA';
 
+import StyleSheet from './components/StyleSheet'
 import './appStyles.css'
 import styles from './appStyles.module.css'
 
@@ -26,7 +28,11 @@ import './App.css';
 // A functionl component is simply a JS function 
 // that receives props and returns declarations.
 // Aim to use functional components as much as 
-// possible
+// possible.
+
+// Another form of functional component exists
+// called "MemoComponent" which re-renders 
+// only when there are changes in props.
 
 // Advantages
 
@@ -36,6 +42,13 @@ import './App.css';
 // State and lifecycle hooks can also be used in FC
 
 // React Class Components
+
+// React class components maintain their own state which
+// can be altered by the component. 
+
+// Another form of class level components exist called "PureComponent"
+// which re-render based on a shallow comparison between
+// props and state (typically used for a performance boost)
 
 // Advantages
 
@@ -61,15 +74,11 @@ function App() {
   return (
     <div className="App">
       
-      <Greet name="Bruce" heroName="Batman">
-        <p>This is a child of the Batman Greet tag</p>
-      </Greet>
-      <Greet name="Clark" heroName="Superman">
-        <button>This is a button of the Superman Greet tag</button>
-      </Greet>
-      <Greet name="Diana" heroName="Wonder Woman">
-        <a href="www.google.com">This is a child link of Wonder Woman</a>
-      </Greet>
+      <LifecycleA />
+
+      <Greet name="Bruce" heroName="Batman"><p>This is a child of the Batman Greet tag</p></Greet>
+      <Greet name="Clark" heroName="Superman"><button>This is a button of the Superman Greet tag</button></Greet>
+      <Greet name="Diana" heroName="Wonder Woman"><a href="www.google.com">This is a child link of Wonder Woman</a></Greet>
       
       <Welcome name="Bruce" heroName="Batman"/>
       <Welcome name="Clark" heroName="Superman"/>
@@ -95,6 +104,10 @@ function App() {
       <h1 className={styles.success}>Success!</h1>
 
       <Form />
+
+      <Fragment />
+
+      <Table />
     
     </div>
   );
