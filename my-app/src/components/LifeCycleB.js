@@ -12,6 +12,9 @@ export class LifecycleB extends Component {
     }
     
     componentDidMount() {
+        // This is the ideal place to perform side effects (such as make HTTP requests, 
+        // AJAX calls etc) It is invoked immediately after a component and all its children
+        // have been rendered to the DOM.
         console.log('LifeCycleB componentDidMount()')
     }
 

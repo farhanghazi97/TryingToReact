@@ -5,7 +5,8 @@ class Message extends Component {
     
     // The constructor is special function that gets called whenever
     // a new component is created. It is used to initialize component
-    // state and binding event handlers. 
+    // state and bind event handlers. We should not perform external
+    // requests within the consturctor (e.g HTTP requests)
     constructor(props) {
         
         // A call needs to be made to the base class
